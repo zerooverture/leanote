@@ -233,7 +233,7 @@ define("tinymce/pasteplugin/Clipboard", [
 				if(reIsOk(ret)) {
 					// 将图片替换之
 					// var src = urlPrefix + "/" + ret.Item;
-					var src = urlPrefix + "/file/outputImage?fileId=" + ret.Id;
+					var src = urlPrefix + "/api/file/getImage?fileId=" + ret.Id;
 					var dom = editor.dom;
 					for(var i in ids) {
 						var id = ids[i];
@@ -621,6 +621,8 @@ define("tinymce/pasteplugin/Clipboard", [
 			
 			if (hasImage(e)) {
 				removePasteBin();
+				// 不然会在内容中插入一个图片, 
+				e.preventDefault();
 				return;
 			}
 

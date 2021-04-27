@@ -616,7 +616,7 @@ func (this *NoteService) UpdateNoteContent(updatedUserId, noteId, content, abstr
 			return false, "conflict", 0
 		}
 		afterUsn = userService.IncrUsn(userId)
-		db.UpdateByIdAndUserIdField(db.Notes, noteId, userId, "Usn", usn)
+		db.UpdateByIdAndUserIdField(db.Notes, noteId, userId, "Usn", afterUsn)
 	}
 
 	if db.UpdateByIdAndUserIdMap(db.NoteContents, noteId, userId, data) {
@@ -1106,7 +1106,7 @@ func (this *NoteService) FixContent(content string, isMarkdown bool) string {
 				reg2, _ = regexp.Compile("<a(?:[^>]+?)(" + eachPattern["src"] + `=['"]*` + baseUrlPattern + eachPattern["middle"] + `\?` + eachPattern["param"] + `=([a-z0-9A-Z]{24})["']*)[^>]*>`)
 			}
 
-			Log(reg2)
+			// Log(reg2)
 
 			content = reg.ReplaceAllStringFunc(content, func(str string) string {
 				// str=这样的

@@ -31,7 +31,7 @@ We have been using the popular note-taking software/service `Evernote` as our kn
 
 * A more powerful editor: `Evernote`'s editor lacks the functionalities of **document navigation**, **syntax based code rendering** (as a programmer, syntax highlighted code rendering is a necessity), **image resizing** and so forth.
 * Everybody loves *markdown*, however `Evernote` simply wouldn't add it despite of years' of requests from users. So we will do the favor and bring a *markdown* enabled editor to you, guess what, it is also rendered in real-time!
-* If you a developer and miss the `Vim` or `Emacs` ways of writing, we offer you the choice of `Vim` and `Emacs` editting modes. Equipped   with *markdown* syntax for text formatting, you will never need to touch your mouse while writing.
+* If you a developer and miss the `Vim` or `Emacs` ways of writing, we offer you the choice of `Vim` and `Emacs` editing modes. Equipped with *markdown* syntax for text formatting, you will never need to touch your mouse while writing.
 * We love managing knowledge and thoughts as much as sharing them, so everybody has their own note account (`Evernote`, `Onenote`, `Google doc`, `Wiz note` etc.) and social media account (`Facebook`, `Wordpress`, blogs, etc.). But why can’t those two be one? Leanote makes this first step to bridge the private note-taking and public knowledge sharing seamlessly.
 * A complete and all-platform (sorry Windows phone) covering software suite: that includes Leanote Web & Server (this repository), [Desktop app](https://github.com/leanote/desktop-app), [iOS](https://github.com/leanote/leanote-ios), [Android](https://github.com/leanote/leanote-android). And they are all open source!
 * ......
@@ -50,7 +50,7 @@ More information about how to install Leanote please see:
     * [Windows](https://github.com/leanote/leanote/wiki/leanote-source-installation-on-Windows-(En))
     * [Mac and Linux](https://github.com/leanote/leanote/wiki/leanote-binary-installation-on-Mac-and-Linux-(En))
 * Leanote source installation tutorial:
-    * [Windows](https://github.com/leanote/leanote/wiki/leanote-source-installation-on-Windows-(En))
+    <!-- * [Windows](https://github.com/leanote/leanote/wiki/leanote-source-installation-on-Windows-(En)) -->
     * [Mac and Linux](https://github.com/leanote/leanote/wiki/Leanote-source-installation-on-Mac-and-Linux-(En))
 
 ## 4. Documentation
@@ -66,7 +66,7 @@ If you are a developer yourself and feel like to build on top of Leanote, please
 ## 6. Contributions
 
 Like or dislike Leanote, please leave your comments and suggestions to help us improve it.
-If you encounter any issue, we suggest you first do a search in the issues section to see whether a solution already exists, or open up a new one otherwise.
+If you encounter any issue, we suggest you first search the issues section to see whether a solution already exists, or open up a new one otherwise.
 
 We’d like to acknowledge the contributions made by our [developers and contributors](https://github.com/leanote/leanote/graphs/contributors) to
 this project. Leanote won’t exist without your hard work. Your help is much appreciated.
@@ -81,12 +81,12 @@ If you find any problems or have any good ideas, feature requests, please submit
 ## 8. Donation
 
 If you like our product, consider supporting us via [donate us](http://leanote.org/#donate).
-We acknowledge the donations make by all the [donators](http://leanote.leanote.com/post/leanote-donation-list).
+We acknowledge the donations made by all the [donators](http://leanote.leanote.com/post/leanote-donation-list).
 
 ## 9. Related projects
 
 * [Leanote Desktop App](https://github.com/leanote/desktop-app), [Download](http://app.leanote.com)
-* [Leanote iOS](https://github.com/leanote/leanote-ios), [Download From App Store](https://itunes.apple.com/en/app/leanote/id1022302858?mt=8)
+* [Leanote iOS](https://github.com/leanote/leanote-ios), [Download From App Store](https://itunes.apple.com/app/leanote/id1022302858)
 * [Leanote Android](https://github.com/leanote/leanote-android), development phase
 
 You are welcome to join us.
@@ -145,7 +145,7 @@ Leanote云笔记产品包括: Leanote Web & Server(即本仓库), 桌面客户�
     * [Windows](https://github.com/leanote/leanote/wiki/Leanote%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%89%88%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B---Windows)
     * [Mac, Linux](https://github.com/leanote/leanote/wiki/leanote%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%89%88%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B)
 * Leanote源码详细安装教程:
-    * [Windows](https://github.com/leanote/leanote/wiki/Leanote-%E6%BA%90%E7%A0%81%E7%89%88%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B----Windows)
+    <!-- * [Windows](https://github.com/leanote/leanote/wiki/Leanote-%E6%BA%90%E7%A0%81%E7%89%88%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B----Windows) -->
     * [Mac, Linux](https://github.com/leanote/leanote/wiki/leanote%E5%BC%80%E5%8F%91%E7%89%88%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B)
 
 ## 4. 相关文档
@@ -186,4 +186,3 @@ Leanote还有很多问题, 如果你喜欢它, 欢迎加入我们一起完善Lea
 * [Leanote 社区](http://bbs.leanote.com)
 * [QQ群](http://leanote.leanote.com/post/Leanote-groups)
 * [Leanote Google Group](https://groups.google.com/forum/#!forum/leanote)
-

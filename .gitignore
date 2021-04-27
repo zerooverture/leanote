@@ -1,3 +1,7 @@
+test-results/
+tmp/
+routes/
+/none
 /src
 pkg
 bin2
@@ -7,7 +11,6 @@ bin/release
 bin/test.sh
 bin/tmp
 bin/test
-bin/src
 public/upload
 app/routes/routes.go
 app/tmp/main.go
@@ -15,5 +18,10 @@ app/tmp/main.go
 .settings
 .project
 public/config.codekit
-files
+files/
 /node_modules
+.idea
+*.iml
+target/
+package/leanote.tar.gz
+package/leanote/

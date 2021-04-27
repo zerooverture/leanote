@@ -41220,7 +41220,7 @@ define("tinymce/pasteplugin/Clipboard", [
 				if(reIsOk(ret)) {
 					// 将图片替换之
 					// var src = urlPrefix + "/" + ret.Item;
-					var src = urlPrefix + "/file/outputImage?fileId=" + ret.Id;
+					var src = urlPrefix + "/api/file/getImage?fileId=" + ret.Id;
 					var dom = editor.dom;
 					for(var i in ids) {
 						var id = ids[i];
@@ -42455,7 +42455,9 @@ expose(["tinymce/pasteplugin/Utils","tinymce/pasteplugin/WordFilter"]);
 				type: 'window',
 				layout: "flex",
 				pack: "center",
-				align: "center",
+				align: "right",
+				classes: "find-replace-ctn",
+				// minWidth: 300,
 				onClose: function() {
 					editor.focus();
 					self.done();
@@ -42540,6 +42542,9 @@ expose(["tinymce/pasteplugin/Utils","tinymce/pasteplugin/WordFilter"]);
 					]
 				}
 			}).renderTo().reflow();
+			
+			// 立即到最右
+			win.moveTo($('body').width()-$('.mce-find-replace-ctn').width(), 60)
 		}
 
 		self.init = function(ed) {

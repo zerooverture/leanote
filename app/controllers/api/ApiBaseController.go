@@ -23,18 +23,18 @@ type ApiBaseContrller struct {
 
 // 得到token, 这个token是在AuthInterceptor设到Session中的
 func (c ApiBaseContrller) getToken() string {
-	return c.Session["_token"]
+	return c.GetSession("_token")
 }
 
 // userId
 // _userId是在AuthInterceptor设置的
 func (c ApiBaseContrller) getUserId() string {
-	return c.Session["_userId"]
+	return c.GetSession("_userId")
 }
 
 // 得到用户信息
 func (c ApiBaseContrller) getUserInfo() info.User {
-	userId := c.Session["_userId"]
+	userId := c.GetSession("_userId")
 	if userId == "" {
 		return info.User{}
 	}
@@ -53,16 +53,23 @@ func (c ApiBaseContrller) uploadAttach(name string, noteId string) (ok bool, msg
 		}
 	*/
 
-	file, handel, err := c.Request.FormFile(name)
-	if err != nil {
+	var data []byte
+	c.Params.Bind(&data, name)
+	handel := c.Params.Files[name][0]
+	if data == nil || len(data) == 0 {
 		return
 	}
-	defer file.Close()
 
-	data, err := ioutil.ReadAll(file)
-	if err != nil {
-		return
-	}
+	// file, handel, err := c.Request.FormFile(name)
+	// if err != nil {
+	// 	return
+	// }
+	// defer file.Close()
+
+	// data, err := ioutil.ReadAll(file)
+	// if err != nil {
+	// 	return
+	// }
 	// > 5M?
 	maxFileSize := configService.GetUploadSize("uploadAttachSize")
 	if maxFileSize <= 0 {
@@ -79,7 +86,7 @@ func (c ApiBaseContrller) uploadAttach(name string, noteId string) (ok bool, msg
 	filePath := "files/" + GetRandomFilePath(userId, newGuid) + "/attachs"
 
 	dir := revel.BasePath + "/" + filePath
-	err = os.MkdirAll(dir, 0755)
+	err := os.MkdirAll(dir, 0755)
 	if err != nil {
 		return
 	}
@@ -122,11 +129,18 @@ func (c ApiBaseContrller) upload(name string, noteId string, isAttach bool) (ok 
 	if isAttach {
 		return c.uploadAttach(name, noteId)
 	}
-	file, handel, err := c.Request.FormFile(name)
-	if err != nil {
+	// file, handel, err := c.Request.FormFile(name)
+	// if err != nil {
+	// 	return
+	// }
+	// defer file.Close()
+
+	var data []byte
+	c.Params.Bind(&data, name)
+	handel := c.Params.Files[name][0]
+	if data == nil || len(data) == 0 {
 		return
 	}
-	defer file.Close()
 
 	newGuid := NewGuid()
 	// 生成上传路径
@@ -135,7 +149,7 @@ func (c ApiBaseContrller) upload(name string, noteId string, isAttach bool) (ok 
 	fileUrlPath := "files/" + GetRandomFilePath(userId, newGuid) + "/images"
 
 	dir := revel.BasePath + "/" + fileUrlPath
-	err = os.MkdirAll(dir, 0755)
+	err := os.MkdirAll(dir, 0755)
 	if err != nil {
 		return
 	}
@@ -148,10 +162,10 @@ func (c ApiBaseContrller) upload(name string, noteId string, isAttach bool) (ok 
 	// }
 
 	filename = newGuid + ext
-	data, err := ioutil.ReadAll(file)
-	if err != nil {
-		return
-	}
+	// data, err := ioutil.ReadAll(file)
+	// if err != nil {
+	// 	return
+	// }
 
 	maxFileSize := configService.GetUploadSize("uploadImageSize")
 	if maxFileSize <= 0 {
